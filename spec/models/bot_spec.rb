@@ -15,4 +15,13 @@ RSpec.describe Bot, type: :model do
     expect(Bot::TWITTER_REST_CLIENT).to receive(:update).once.with(tweet)
     Bot.tweet tweet
   end
+
+  it "should test reply" do
+    allow(Bot::TWITTER_REST_CLIENT).to receive(:create_direct_message)
+    allow(QuoteEngine).to receive(:random) { Quote.new :text => "A random quote", :author => 'Rspec' }
+    expect(QuoteEngine).to receive(:random).once
+    user = "A twitter user"
+    expect(Bot::TWITTER_REST_CLIENT).to receive(:create_direct_message).once.with(user, "A random quote")
+    Bot.reply user
+  end
 end

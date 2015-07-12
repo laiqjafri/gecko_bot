@@ -16,4 +16,8 @@ class Bot
   def self.tweet text
     TWITTER_REST_CLIENT.update text.truncate(TWEET_MAX_LENGTH)
   end
+
+  def self.reply user
+    TWITTER_REST_CLIENT.create_direct_message user, QuoteEngine.random.text
+  end
 end
