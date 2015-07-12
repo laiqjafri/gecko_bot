@@ -1,5 +1,6 @@
 class Bot
   TWEET_MAX_LENGTH = 140
+  NAME = "GeckoQuoteBot"
 
   # For twitter's REST API (https://dev.twitter.com/rest/public)
   TWITTER_REST_CLIENT = Twitter::REST::Client.new do |config|
