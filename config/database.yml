@@ -5,21 +5,23 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: gecko_quote_bot_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: gecko_quote_bot_test
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  database: d4bnp8npe80j8a
+  username: kdrivwpdkdhuai
+  password: 2GsyUAGpAfTkHKyu02C14ry7q9
+  host: ec2-107-22-175-206.compute-1.amazonaws.com
