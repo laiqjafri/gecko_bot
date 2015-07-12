@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: d4bnp8npe80j8a
+  username: kdrivwpdkdhuai
+  password: 2GsyUAGpAfTkHKyu02C14ry7q9
+  host: ec2-107-22-175-206.compute-1.amazonaws.com
