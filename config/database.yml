@@ -21,6 +21,7 @@ test:
   database: gecko_quote_bot_test
 
 production:
+  <<: *default
   database: d4bnp8npe80j8a
   username: kdrivwpdkdhuai
   password: 2GsyUAGpAfTkHKyu02C14ry7q9
